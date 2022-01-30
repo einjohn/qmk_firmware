@@ -82,14 +82,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Shft |   Z  |   X  |   C  |   D  |   V  |   K  |   H  |   ,  |   .  |   /  |  "   |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Entr | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
+   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Bksp | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
       KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
       KC_ESC,  SFT_A,   CTL_R,   ALT_S,   OS_T,    KC_G,    KC_M,    OS_N,    ALT_E,   CTL_I,   SFT_O,   KC_ENT,
       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
-      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   KC_ENT,  KC_SPC,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   KC_BSPC, KC_SPC,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
 
   /* Dvorak
