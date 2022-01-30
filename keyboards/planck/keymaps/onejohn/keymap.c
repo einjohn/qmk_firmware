@@ -41,6 +41,18 @@ enum planck_keycodes {
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 
+// Left-hand home row mods
+#define SFT_A LSFT_T(KC_A)
+#define CTL_R LCTL_T(KC_R)
+#define ALT_S LALT_T(KC_S)
+#define OS_T  LGUI_T(KC_T)
+
+// Right-hand home row mods
+#define OS_N  RGUI_T(KC_N)
+#define ALT_E LALT_T(KC_E)
+#define CTL_I RCTL_T(KC_I)
+#define SFT_O RSFT_T(KC_O)
+
 // keymap definition
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -66,16 +78,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------------------------------------.
    * | Tab  |   Q  |   W  |   F  |   P  |   B  |   J  |   L  |   U  |   Y  |   ;  | Bksp |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Esc  |   A  |   R  |   S  |   T  |   G  |   M  |   N  |   E  |   I  |   O  | Entr |
+   * | Esc  |SFT_A |CTL_R |ALT_S | OS_T | KC_G | KC_M | OS_N | ALT_E| CTL_I| SFT_O| Entr |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Shft |   Z  |   X  |   C  |   D  |   V  |   K  |   H  |   ,  |   .  |   /  |  "   |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Entr | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself? or use home row mods?
+   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Entr | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
       KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-      KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ENT ,
+      KC_ESC,  SFT_A,   CTL_R,   ALT_S,   OS_T,    KC_G,    KC_M,    OS_N,    ALT_E,   CTL_I,   SFT_O,   KC_ENT,
       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
       BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   KC_ENT,  KC_SPC,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
