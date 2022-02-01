@@ -42,16 +42,24 @@ enum planck_keycodes {
 #define RAISE MO(_RAISE)
 
 // Left-hand home row mods
-#define SFT_A LSFT_T(KC_A)
-#define CTL_R LCTL_T(KC_R)
-#define ALT_S LALT_T(KC_S)
-#define OS_T  LGUI_T(KC_T)
+#define HOME_A LSFT_T(KC_A)
+#define HOME_R LCTL_T(KC_R)
+#define HOME_S LGUI_T(KC_S)
+#define HOME_T LALT_T(KC_T)
 
 // Right-hand home row mods
-#define OS_N  RGUI_T(KC_N)
-#define ALT_E LALT_T(KC_E)
-#define CTL_I RCTL_T(KC_I)
-#define SFT_O RSFT_T(KC_O)
+#define HOME_N LALT_T(KC_N)
+#define HOME_E RGUI_T(KC_E)
+#define HOME_I RCTL_T(KC_I)
+#define HOME_O RSFT_T(KC_O)
+
+// combined non-home row mods
+// cmd+shift
+#define HOME_C   MT(MOD_LSFT | MOD_LGUI, KC_C)
+#define HOME_COM MT(MOD_RSFT | MOD_RGUI, KC_COMM)
+// alt+shift
+#define HOME_F   MT(MOD_LSFT | MOD_LALT, KC_F)
+#define HOME_U   MT(MOD_RSFT | MOD_LALT, KC_U)
 
 // keymap definition
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -76,20 +84,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Colemak Mod-DH
    * ,-----------------------------------------------------------------------------------.
-   * | Tab  |   Q  |   W  |   F  |   P  |   B  |   J  |   L  |   U  |   Y  |   ;  | Bksp |
+   * | Tab  |   Q  |   W  |A+S/F |   P  |   B  |   J  |   L  | A+S/U|   Y  |   ;  | Bksp |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Esc  |SFT/A |CTL/R |ALT/S | OS/T | KC/G | KC/M | OS/N | ALT/E| CTL/I| SFT/O| Entr |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Shft |   Z  |   X  |   C  |   D  |   V  |   K  |   H  |   ,  |   .  |   /  |  "   |
+   * | Shft |   Z  |   X  |C+S/C |   D  |   V  |   K  |   H  | C+S/,|   .  |   /  |  "   |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Bksp | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
-      KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-      KC_ESC,  SFT_A,   CTL_R,   ALT_S,   OS_T,    KC_G,    KC_M,    OS_N,    ALT_E,   CTL_I,   SFT_O,   KC_ENT,
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT,
-      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   KC_BSPC, KC_SPC,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+      KC_TAB,  KC_Q,    KC_W,    HOME_F,  KC_P,    KC_B,    KC_J,    KC_L,    HOME_U,   KC_Y,    KC_SCLN, KC_BSPC,
+      KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  KC_ENT,
+      KC_LSFT, KC_Z,    KC_X,    HOME_C,  KC_D,    KC_V,    KC_K,    KC_H,    HOME_COM, KC_DOT,  KC_SLSH, KC_QUOT,
+      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   KC_BSPC, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT
   ),
 
   /* Dvorak
