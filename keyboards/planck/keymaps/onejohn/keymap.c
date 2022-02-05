@@ -58,8 +58,8 @@ enum planck_keycodes {
 #define HOME_C   MT(MOD_LSFT | MOD_LGUI, KC_C)
 #define HOME_COM MT(MOD_RSFT | MOD_RGUI, KC_COMM)
 // alt+shift
-#define HOME_F   MT(MOD_LSFT | MOD_LALT, KC_F)
-#define HOME_U   MT(MOD_RSFT | MOD_LALT, KC_U)
+#define HOME_D   MT(MOD_LSFT | MOD_LALT, KC_D)
+#define HOME_H   MT(MOD_RSFT | MOD_LALT, KC_H)
 
 // keymap definition
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -94,9 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
-      KC_TAB,  KC_Q,    KC_W,    HOME_F,  KC_P,    KC_B,    KC_J,    KC_L,    HOME_U,   KC_Y,    KC_SCLN, KC_BSPC,
+      KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_SCLN, KC_BSPC,
       KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  KC_ENT,
-      KC_LSFT, KC_Z,    KC_X,    HOME_C,  KC_D,    KC_V,    KC_K,    KC_H,    HOME_COM, KC_DOT,  KC_SLSH, KC_QUOT,
+      KC_LSFT, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, KC_QUOT,
       BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   KC_BSPC, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT
   ),
 
