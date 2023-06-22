@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Esc  |SFT/A |CTL/R |ALT/S | OS/T | KC/G | KC/M | OS/N | ALT/E| CTL/I| SFT/O| Entr |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Shft |   Z  |   X  |C+S/C |   D  |   V  |   K  |   H  | C+S/,|   .  |   /  |  "   |
+   * | Shft |   Z  |   X  |O+S/C |A+S/D |   V  |   K  | A+S/H| O+S/,|   .  |   /  |  "   |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Bksp | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
    * `-----------------------------------------------------------------------------------'
