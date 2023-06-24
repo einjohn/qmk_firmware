@@ -91,20 +91,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Colemak Mod-DH
    * ,-----------------------------------------------------------------------------------.
-   * | Tab  |   Q  |   W  |A+S/F |   P  |   B  |   J  |   L  | A+S/U|   Y  |OSM(S)| Bksp |
+   * | Tab  |   Q  |   W  |A+S/F |   P  |   B  |   J  |   L  | A+S/U|   Y  |OSM(S)|      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Esc  |SFT/A |CTL/R | OS/S |ALT/T | KC/G | KC/M |ALT/N |  OS/E| CTL/I| SFT/O| Entr |
+   * | Esc  |SFT/A |CTL/R | OS/S |ALT/T | KC/G | KC/M |ALT/N |  OS/E| CTL/I| SFT/O|      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Shft |   Z  |   X  |O+S/C |A+S/D |   V  |   K  | A+S/H| O+S/,|   .  |   /  |  "   |
+   * | Shft |   Z  |   X  |O+S/C |A+S/D |   V  |   K  | A+S/H| O+S/,|   .  |   /  |      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Smbl | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
+   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Smbl | Spc  | Left | Down |  Up  |      | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
-      KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  KC_BSPC,
-      KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  KC_ENT,
-      KC_LSFT, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, KC_QUOT,
-      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   SYMBOLS, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT
+      KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  _______,
+      KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  _______,
+      KC_LSFT, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, _______,
+      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   SYMBOLS, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   _______
   ),
 
   /* Dvorak
@@ -145,20 +145,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Raise / Numbers
    * ,-----------------------------------------------------------------------------------.
-   * |   `  |   1  |   2  |   3  |   4  |   5  | Bksp |   7  |   8  |   9  |   *  | Bksp |
+   * |   `  |   1  |   2  |   3  |   4  |   5  |      |   7  |   8  |   9  |   *  |      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Del  |  SFT |  CTL |  OS  | ALT  |      |   T  |   4  |   5  |   6  |   +  |  \   |
+   * | Del  |  SFT |  CTL |  OS  | ALT  |      |      |   4  |   5  |   6  |   +  |  \   |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      | FUNC |   :  |   1  |   2  |   3  |   -  |      |
+   * |      |      |      |      |      | FUNC |      |   1  |   2  |   3  |   -  |      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |  Spc |   0  |   ,  |   .  |   /  | Play |
+   * |      |      |      |      |      |      |      |   0  |   ,  |   .  |   /  | Play |
    * `-----------------------------------------------------------------------------------'
    */
   [_RAISE] = LAYOUT_planck_grid(
-      KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_BSPC,   KC_7, KC_8,    KC_9,    KC_PAST, KC_BSPC,
-      KC_DEL,  KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, _______, S(KC_T),   KC_4, KC_5,    KC_6,    KC_PPLS, KC_BSLS,
-      _______, _______, _______, _______, _______, FUNCS,   S(KC_DOT), KC_1, KC_2,    KC_3,    KC_PMNS, _______,
-      _______, _______, _______, _______, _______, _______, KC_SPC,    KC_0, KC_COMM, KC_DOT,  KC_PSLS, KC_MPLY
+      KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, KC_7, KC_8,    KC_9,    KC_PAST, _______,
+      KC_DEL,  KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, _______, _______, KC_4, KC_5,    KC_6,    KC_PPLS, KC_BSLS,
+      _______, _______, _______, _______, _______, FUNCS,   _______, KC_1, KC_2,    KC_3,    KC_PMNS, _______,
+      _______, _______, _______, _______, _______, _______, _______, KC_0, KC_COMM, KC_DOT,  KC_PSLS, KC_MPLY
   ),
 
   /* Function keys
