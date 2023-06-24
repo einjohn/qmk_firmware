@@ -127,20 +127,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Lower / Navigation
    * ,-----------------------------------------------------------------------------------.
-   * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  | Bksp |  up  | Del  |   )  | Bksp |
+   * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  | Bksp |  up  | Del  | PgUp | Bksp |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Del  |  SFT |  CTL |  OS  | ALT  |      |      | left | down | rght |   }  |  |   |
+   * | Del  |  SFT |  CTL |  OS  | ALT  |      |      | left | down | rght | PgDn |  |   |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      | Entr |ISO | | Home | End  |      |
+   * |      |      |      |      |      |      | Tab  | Entr | Home | End  | ISO| |      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * |      |      |      |      |      |      |      |      | Next | Vol- | Vol+ | Play |
    * `-----------------------------------------------------------------------------------'
    */
   [_LOWER] = LAYOUT_planck_grid(
-      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_BSPC, KC_UP,      KC_DEL,  KC_RPRN, KC_BSPC,
-      KC_DEL,  KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, _______, _______, KC_LEFT, KC_DOWN,    KC_RGHT, KC_RCBR, KC_PIPE,
-      _______, _______, _______, _______, _______, _______, _______, KC_ENT,  S(KC_NUBS), KC_HOME, KC_END,  _______,
-      _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT,    KC_VOLD, KC_VOLU, KC_MPLY
+      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_BSPC, KC_UP,   KC_DEL,  KC_PGUP,    KC_BSPC,
+      KC_DEL,  KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,    KC_PIPE,
+      _______, _______, _______, _______, _______, _______, KC_TAB,  KC_ENT,  KC_HOME, KC_END,  S(KC_NUBS), _______,
+      _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU,    KC_MPLY
   ),
 
   /* Raise / Numbers
