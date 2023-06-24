@@ -25,6 +25,7 @@ enum planck_layers {
   _DVORAK,
   _LOWER,
   _RAISE,
+  _SYMBOLS,
   _PLOVER,
   _ADJUST
 };
@@ -40,6 +41,7 @@ enum planck_keycodes {
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
+#define SYMBOLS MO(_SYMBOLS)
 
 // Left-hand home row mods
 #define HOME_A LSFT_T(KC_A)
@@ -90,14 +92,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Shft |   Z  |   X  |O+S/C |A+S/D |   V  |   K  | A+S/H| O+S/,|   .  |   /  |  "   |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Bksp | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
+   * | Lit  | Ctrl | Alt  | GUI  | Lwr  | Rse  | Smbl | Spc  | Left | Down |  Up  | Rght | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
       KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_SCLN, KC_BSPC,
       KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  KC_ENT,
       KC_LSFT, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, KC_QUOT,
-      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   KC_BSPC, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT
+      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   SYMBOLS, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT
   ),
 
   /* Dvorak
@@ -152,6 +154,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_DEL,  KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, _______, S(KC_T),   KC_4, KC_5,    KC_6,    KC_PPLS, KC_BSLS,
       _______, _______, _______, _______, _______, _______, S(KC_DOT), KC_1, KC_2,    KC_3,    KC_PMNS, _______,
       _______, _______, _______, _______, _______, _______, KC_SPC,    KC_0, KC_COMM, KC_DOT,  KC_PSLS, KC_MPLY
+  ),
+
+  /* Symbols #WIP
+   * ,-----------------------------------------------------------------------------------.
+   * |      | ö    | ä    | ß    | ü    | \    | ^    |      |      |      |      |      |
+   * |------+------+------+------+------+------+------+------+------+------+------+------|
+   * |      | [    | ]    | (    | )    | |    | ´    |  ALT |   OS |  CTL |  SFT |      |
+   * |------+------+------+------+------+------+------+------+------+------+------+------|
+   * |      | <    | >    | {    | }    | /    |      |      |      |      |      |      |
+   * |------+------+------+------+------+------+------+------+------+------+------+------|
+   * |      |      |      |      |      |      |      |      |      |      |      |      |
+   * `-----------------------------------------------------------------------------------'
+   */
+  [_SYMBOLS] = LAYOUT_planck_grid(
+      _______, KC_SCLN, KC_QUOT, KC_SLSH, KC_LBRC, _______, _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______, _______, KC_RALT, KC_RGUI, KC_RCTL, KC_RSFT, _______,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
   /* Plover layer (http://opensteno.org)
