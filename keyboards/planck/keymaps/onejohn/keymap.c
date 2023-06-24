@@ -65,6 +65,9 @@ enum planck_keycodes {
 #define HOME_D   MT(MOD_LSFT | MOD_LALT, KC_D)
 #define HOME_H   MT(MOD_RSFT | MOD_LALT, KC_H)
 
+// one shot modifier (left shift)
+#define OSM_LS OSM(MOD_LSFT)
+
 // keymap definition
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -88,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Colemak Mod-DH
    * ,-----------------------------------------------------------------------------------.
-   * | Tab  |   Q  |   W  |A+S/F |   P  |   B  |   J  |   L  | A+S/U|   Y  |   ;  | Bksp |
+   * | Tab  |   Q  |   W  |A+S/F |   P  |   B  |   J  |   L  | A+S/U|   Y  |OSM(S)| Bksp |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * | Esc  |SFT/A |CTL/R | OS/S |ALT/T | KC/G | KC/M |ALT/N |  OS/E| CTL/I| SFT/O| Entr |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -98,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
-      KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_SCLN, KC_BSPC,
+      KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  KC_BSPC,
       KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  KC_ENT,
       KC_LSFT, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, KC_QUOT,
       BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   SYMBOLS, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT
