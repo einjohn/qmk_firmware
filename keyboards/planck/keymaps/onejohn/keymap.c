@@ -124,9 +124,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Colemak Mod-DH
    * ,-----------------------------------------------------------------------------------------------------------.
-   * |   x    |     Q  |     W  |  A+S/F |     P  |     B  |     J  |     L  |   A+S/U|     Y  |  OSM(S)|    x   |
+   * |   x    |  Esc   |     W  |  A+S/F |     P  |     B  |     J  |     L  |   A+S/U|     Y  |  OSM(S)|    x   |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |   Esc  |  SFT/A |  CTL/R |   OS/S |  ALT/T |   KC/G |   KC/M |  ALT/N |    OS/E|   CTL/I|   SFT/O|    x   |
+   * |   x    |  SFT/A |  CTL/R |   OS/S |  ALT/T |   KC/G |   KC/M |  ALT/N |    OS/E|   CTL/I|   SFT/O|    x   |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |   x    |     Z  |     X  |  O+S/C |  A+S/D |     V  |     K  |   A+S/H|   O+S/,|     .  |     /  |    x   |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
@@ -134,8 +134,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
-      XXXXXXX, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  XXXXXXX,
-      KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  XXXXXXX,
+      XXXXXXX, KC_ESC,  KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  XXXXXXX,
+      XXXXXXX, HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  XXXXXXX,
       XXXXXXX, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, XXXXXXX,
       BACKLIT, XXXXXXX, XXXXXXX, XXXXXXX, LOWER,   RAISE,   SYMBOLS, KC_SPC,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX
   ),
@@ -196,19 +196,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Symbols
    * ,-----------------------------------------------------------------------------------------------------------.
-   * |        |   ö    |   ä    |   ß    |   ü    |   \    |    ^   |        |        |        |        |        |
+   * |        |   q    |   ä    |   ß    |   ü    |   \    |    ^   |        |        |        |        |        |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |        |   [    |   ]    |   (    |   )    |   |    |    ´   |    ALT |     OS |    CTL |    SFT |        |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |        |   <    |   >    |   {    |   }    |   /    |        |        |        |        |        |        |
+   * |        |   <    |   >    |   {    |   }    |   /    |    ö   |        |        |        |        |        |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |        |        |        |        |        |        |        |        |        |        |        |        |
    * `-----------------------------------------------------------------------------------------------------------'
    */
   [_SYMBOLS] = LAYOUT_planck_grid(
-      _______, KC_SCLN, KC_QUOT, KC_MINS, KC_LBRC, DE_M_BS, KC_GRV,  _______, _______, _______, _______, _______,
+      _______, KC_Q,    KC_QUOT, KC_MINS, KC_LBRC, DE_M_BS, KC_GRV,  _______, _______, _______, _______, _______,
       _______, DE_M_LB, DE_M_RB, S(KC_8), S(KC_9), DE_M_P,  KC_EQL,  KC_RALT, KC_RGUI, KC_RCTL, KC_RSFT, _______,
-      _______, KC_NUBS, DE_M_GT, DE_M_LC, DE_M_RC, DE_M_S,  _______, _______, _______, _______, _______, _______,
+      _______, KC_NUBS, DE_M_GT, DE_M_LC, DE_M_RC, DE_M_S,  KC_SCLN, _______, _______, _______, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
