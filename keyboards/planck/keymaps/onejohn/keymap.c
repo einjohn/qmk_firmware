@@ -68,6 +68,21 @@ enum planck_keycodes {
 // one shot modifier (left shift)
 #define OSM_LS OSM(MOD_LSFT)
 
+// new names for modified versions
+// - it seems i can't work with defauts
+//   (due to the software interpretation as qwertz)
+// - this is how i would type them on a german mac
+// - maybe i have to fix this for using it with linux, though
+//   (what key codes does my windows external keyboard send for these characters?)
+#define DE_M_GT S(KC_NUBS)
+#define DE_M_LB A(KC_5)
+#define DE_M_RB A(KC_6)
+#define DE_M_LC A(KC_8)
+#define DE_M_RC A(KC_9)
+#define DE_M_S S(KC_7)
+#define DE_M_P A(KC_7)
+#define DE_M_BS S(A(KC_7))
+
 // keymap definition
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -131,16 +146,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |   Del  |    SFT |    CTL |    OS  |   ALT  |        |        |   left |   down |   rght |   PgDn |    |   |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |        |        |        |        |        |        |   Tab  |   Entr |   Home |   End  |   ISO| |        |
+   * |        |        |        |        |        |        |   Tab  |   Entr |   Home |   End  |    #   |        |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |        |        |        |        |        |        |        |        |   Next |   Vol- |   Vol+ |   Play |
    * `-----------------------------------------------------------------------------------------------------------'
    */
   [_LOWER] = LAYOUT_planck_grid(
-      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_BSPC, KC_UP,   KC_DEL,  KC_PGUP,    KC_BSPC,
-      KC_DEL,  KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,    KC_PIPE,
-      _______, _______, _______, _______, _______, _______, KC_TAB,  KC_ENT,  KC_HOME, KC_END,  S(KC_NUBS), _______,
-      _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU,    KC_MPLY
+      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_BSPC, KC_UP,   KC_DEL,  KC_PGUP, KC_BSPC,
+      KC_DEL,  KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_PIPE,
+      _______, _______, _______, _______, _______, _______, KC_TAB,  KC_ENT,  KC_HOME, KC_END,  KC_BSLS, _______,
+      _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
   ),
 
   /* Raise / Numbers
@@ -179,11 +194,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
-  /* Symbols #WIP
+  /* Symbols
    * ,-----------------------------------------------------------------------------------------------------------.
-   * |        |   ö    |   ä    |   ß    |   ü    |   \    |   ^    |        |        |        |        |        |
+   * |        |   ö    |   ä    |   ß    |   ü    |   \    |    ^   |        |        |        |        |        |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |        |   [    |   ]    |   (    |   )    |   |    |   ´    |    ALT |     OS |    CTL |    SFT |        |
+   * |        |   [    |   ]    |   (    |   )    |   |    |    ´   |    ALT |     OS |    CTL |    SFT |        |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |        |   <    |   >    |   {    |   }    |   /    |        |        |        |        |        |        |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
@@ -191,9 +206,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------------------------------------------------------'
    */
   [_SYMBOLS] = LAYOUT_planck_grid(
-      _______, KC_SCLN, KC_QUOT, KC_MINS, KC_LBRC, _______, _______, _______, _______, _______, _______, _______,
-      _______, _______, _______, _______, _______, _______, _______, KC_RALT, KC_RGUI, KC_RCTL, KC_RSFT, _______,
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, KC_SCLN, KC_QUOT, KC_MINS, KC_LBRC, DE_M_BS, KC_GRV,  _______, _______, _______, _______, _______,
+      _______, DE_M_LB, DE_M_RB, S(KC_8), S(KC_9), DE_M_P,  KC_EQL,  KC_RALT, KC_RGUI, KC_RCTL, KC_RSFT, _______,
+      _______, KC_NUBS, DE_M_GT, DE_M_LC, DE_M_RC, DE_M_S,  _______, _______, _______, _______, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
