@@ -21,8 +21,8 @@
 
 enum planck_layers {
   _QWERTY,
-  _COLEMAK,
   _DVORAK,
+  _COLEMAK,
   _LOWER,
   _RAISE,
   _SYMBOLS,
@@ -33,8 +33,8 @@ enum planck_layers {
 
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
-  COLEMAK,
   DVORAK,
+  COLEMAK,
   PLOVER,
   BACKLIT,
   EXT_PLV
@@ -104,24 +104,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
 
-  /* Colemak Mod-DH
-   * ,-----------------------------------------------------------------------------------------------------------.
-   * |        |     Q  |     W  |  A+S/F |     P  |     B  |     J  |     L  |   A+S/U|     Y  |  OSM(S)|        |
-   * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |   Esc  |  SFT/A |  CTL/R |   OS/S |  ALT/T |   KC/G |   KC/M |  ALT/N |    OS/E|   CTL/I|   SFT/O|        |
-   * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |        |     Z  |     X  |  O+S/C |  A+S/D |     V  |     K  |   A+S/H|   O+S/,|     .  |     /  |        |
-   * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |   Lit  |   Ctrl |   Alt  |   GUI  |   Lwr  |   Rse  |   Smbl |   Spc  |   Left |   Down |    Up  |        | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
-   * `-----------------------------------------------------------------------------------------------------------'
-   */
-  [_COLEMAK] = LAYOUT_planck_grid(
-      _______, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  _______,
-      KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  _______,
-      _______, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, _______,
-      BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   RAISE,   SYMBOLS, KC_SPC,  KC_LEFT,  KC_DOWN, KC_UP,   _______
-  ),
-
   /* Dvorak
    * ,-----------------------------------------------------------------------------------------------------------.
    * |   Tab  |     "  |     ,  |     .  |     P  |     Y  |     F  |     G  |     C  |     R  |     L  |   Bksp |
@@ -138,6 +120,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ESC,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_SLSH,
       KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENT ,
       BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+  ),
+
+  /* Colemak Mod-DH
+   * ,-----------------------------------------------------------------------------------------------------------.
+   * |   x    |     Q  |     W  |  A+S/F |     P  |     B  |     J  |     L  |   A+S/U|     Y  |  OSM(S)|    x   |
+   * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+   * |   Esc  |  SFT/A |  CTL/R |   OS/S |  ALT/T |   KC/G |   KC/M |  ALT/N |    OS/E|   CTL/I|   SFT/O|    x   |
+   * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+   * |   x    |     Z  |     X  |  O+S/C |  A+S/D |     V  |     K  |   A+S/H|   O+S/,|     .  |     /  |    x   |
+   * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+   * |   Lit  |   x    |   x    |   x    |   Lwr  |   Rse  |   Smbl |   Spc  |    x   |    x   |    x   |    x   | <-- WIP: lwr rse shft altgr bksp del; what on layer, what a key by itself?
+   * `-----------------------------------------------------------------------------------------------------------'
+   */
+  [_COLEMAK] = LAYOUT_planck_grid(
+      XXXXXXX, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  XXXXXXX,
+      KC_ESC,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  XXXXXXX,
+      XXXXXXX, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, XXXXXXX,
+      BACKLIT, XXXXXXX, XXXXXXX, XXXXXXX, LOWER,   RAISE,   SYMBOLS, KC_SPC,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX
   ),
 
   /* Lower / Navigation
@@ -269,15 +269,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case COLEMAK:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_COLEMAK);
-      }
-      return false;
-      break;
     case DVORAK:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_DVORAK);
+      }
+      return false;
+      break;
+    case COLEMAK:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAK);
       }
       return false;
       break;
