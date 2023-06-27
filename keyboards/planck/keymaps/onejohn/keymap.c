@@ -124,19 +124,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Colemak Mod-DH
    * ,-----------------------------------------------------------------------------------------------------------.
-   * |   x    |  Esc   |     W  |  A+S/F |     P  |     B  |     J  |     L  |   A+S/U|     Y  |  OSM(S)|    x   |
+   * |   x    |  Esc   |     W  |  A+S/F |     P  |     B  |     J  |     L  |   A+S/U|     Y  |     Z  |    x   |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |   x    |  SFT/A |  CTL/R |   OS/S |  ALT/T |   KC/G |   KC/M |  ALT/N |    OS/E|   CTL/I|   SFT/O|    x   |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-   * |   x    |     Z  |     X  |  O+S/C |  A+S/D |     V  |     K  |   A+S/H|   O+S/,|     .  |     /  |    x   |
+   * |   x    |  OSM(S)|     X  |  O+S/C |  A+S/D |     V  |     K  |   A+S/H|   O+S/,|     .  |     /  |    x   |
    * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
    * |   Lit  |   x    |   x    |   x    |   Lwr  |   Rse  |   Smbl |   Spc  |    x   |    x   |    x   |    x   |
    * `-----------------------------------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_grid(
-      XXXXXXX, KC_ESC,  KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    OSM_LS,  XXXXXXX,
+      XXXXXXX, KC_ESC,  KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_Z,    XXXXXXX,
       XXXXXXX, HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  XXXXXXX,
-      XXXXXXX, KC_Z,    KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, XXXXXXX,
+      XXXXXXX, OSM_LS,  KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, XXXXXXX,
       BACKLIT, XXXXXXX, XXXXXXX, XXXXXXX, LOWER,   RAISE,   SYMBOLS, KC_SPC,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX
   ),
 
