@@ -262,6 +262,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  uprintf("TAPPING_TOGGLE value: %d", TAPPING_TOGGLE);
   switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
@@ -431,4 +432,12 @@ bool music_mask_user(uint16_t keycode) {
     default:
       return true;
   }
+}
+
+void keyboard_post_init_user(void) {
+  // Customise these values to desired behaviour
+  debug_enable=true;
+  debug_matrix=true;
+  debug_keyboard=true;
+  debug_mouse=true;
 }
