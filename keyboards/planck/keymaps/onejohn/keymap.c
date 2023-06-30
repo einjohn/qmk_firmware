@@ -41,6 +41,7 @@ enum planck_keycodes {
 };
 
 #define LOWER MO(_LOWER)
+#define LOTTR TT(_LOWER)
 #define RAISE MO(_RAISE)
 #define SYMBOLS MO(_SYMBOLS)
 #define FUNCS MO(_FUNCS)
@@ -137,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, KC_ESC,  KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_Z,    XXXXXXX,
       XXXXXXX, HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,  XXXXXXX,
       XXXXXXX, OSM_LS,  KC_X,    HOME_C,  HOME_D,  KC_V,    KC_K,    HOME_H,  HOME_COM, KC_DOT,  KC_SLSH, XXXXXXX,
-      BACKLIT, XXXXXXX, XXXXXXX, XXXXXXX, LOWER,   RAISE,   SYMBOLS, KC_SPC,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX
+      BACKLIT, XXXXXXX, XXXXXXX, LOTTR,   LOWER,   RAISE,   SYMBOLS, KC_SPC,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX
   ),
 
   /* Lower / Navigation

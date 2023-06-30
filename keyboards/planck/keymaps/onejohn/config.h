@@ -48,6 +48,9 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
+// for using TT (Layer-Tap-Toggle)
+#define TAPPING_TOGGLE 3
+
 /*
  * enable home row mods
  */
